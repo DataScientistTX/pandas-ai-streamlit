@@ -5,6 +5,10 @@ from pandasai.llm import OpenAI
 import matplotlib.pyplot as plt
 import os
 
+def save_api_key(api_key):
+    # Set the environment variable
+    os.environ["OPENAI_API_KEY"] = api_key
+    
 st.title("pandas-ai streamlit interface")
 
 st.write("A demo interface for [PandasAI](https://github.com/Sinaptik-AI/pandas-ai)")
@@ -17,6 +21,7 @@ if "openai_key" not in st.session_state:
         key = st.text_input("OpenAI Key", value="", type="password")
         if st.form_submit_button("Submit"):
             st.session_state.openai_key = key
+            save_api_key(key)
             st.session_state.prompt_history = []
             st.session_state.df = None
             st.success('Saved API key for this session.')
@@ -32,21 +37,21 @@ if "openai_key" in st.session_state:
         if uploaded_file is not None:
             df = pd.read_csv(uploaded_file)
             st.session_state.df = df
-            st.session_state.df = SmartDataframe(st.session_state.df,config={"llm": llm})  # Use SmartDataframe to wrap the DataFrame
+            st.session_state.df2 = SmartDataframe(st.session_state.df,config={"llm": llm})  # Use SmartDataframe to wrap the DataFrame
 
     with st.form("Question"):
         question = st.text_input("Question", value="", type="default")
         submitted = st.form_submit_button("Submit")
         if submitted:
             with st.spinner():
-                response = st.session_state.df.ask(question)  # Use .ask() method for SmartDataframe
+                response = st.session_state.df2.chat(str(question))  # Use .chat() method for SmartDataframe
                 if response is not None:
                     st.write(response)
                 st.session_state.prompt_history.append(question)
 
     if st.session_state.df is not None:
         st.subheader("Current dataframe:")
-        st.write(st.session_state.df.dataframe)  # Access the original DataFrame using .dataframe attribute
+        st.write(st.session_state.df)  # Access the original DataFrame using .dataframe attribute
 
     st.subheader("Prompt history:")
     st.write(st.session_state.prompt_history)
