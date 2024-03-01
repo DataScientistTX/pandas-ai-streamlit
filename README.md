@@ -5,7 +5,7 @@ A streamlit interface for pandas-ai
 
 ```
 git clone https://github.com/DataScientistTX/pandas-ai-streamlit.git
-conda create --name pandasai python=3.12
+conda create --name pandasai python=3.11
 conda activate pandasai
 cd pandas-ai-streamlit
 pip install -r requirements.txt
@@ -21,7 +21,7 @@ Note: This is the stable version with pandas-ai version 2.0.
 
 ## Notes
 - Updated to pandasai==2.0. 
-- 
+- Tested with python==3.11
 - Charts are stored as `temp_chart.png` and now they are loaded from there. 
 - 
 - The implementation is not perfect an might cause issues when having multiple concurrent users.
