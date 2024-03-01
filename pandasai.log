@@ -3928,3 +3928,757 @@ plt.show()
 result = {'type': 'plot', 'value': '/Users/sercan/Desktop/pandas-ai-streamlit/exports/charts/temp_chart.png'}
         ```
 2024-02-29 23:33:53 [ERROR] Pipeline failed on step 5: [Errno 2] No such file or directory: '/Users/sercan/Desktop/pandas-ai-streamlit/exports/charts/temp_chart.png'
+2024-02-29 23:59:42 [INFO] Question: plot price vs area
+2024-02-29 23:59:42 [INFO] Running PandasAI with openai LLM...
+2024-02-29 23:59:42 [INFO] Prompt ID: e9aee898-6b68-48fa-96e8-d2cbe7a2b276
+2024-02-29 23:59:42 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-02-29 23:59:42 [INFO] Executing Step 0: ValidatePipelineInput
+2024-02-29 23:59:42 [INFO] Executing Step 1: CacheLookup
+2024-02-29 23:59:42 [INFO] Executing Step 2: PromptGeneration
+2024-02-29 23:59:42 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 545
+  columns: 13
+  schema:
+    fields:
+    - name: price
+      type: int64
+      samples:
+      - 7525000
+      - 5075000
+      - 3325000
+    - name: area
+      type: int64
+      samples:
+      - 3680
+      - 3162
+      - 5300
+    - name: bedrooms
+      type: int64
+      samples:
+      - 4
+      - 6
+      - 1
+    - name: bathrooms
+      type: int64
+      samples:
+      - 2
+      - 4
+      - 1
+    - name: stories
+      type: int64
+      samples:
+      - 1
+      - 4
+      - 2
+    - name: mainroad
+      type: object
+      samples:
+      - 'yes'
+      - 'yes'
+      - 'no'
+    - name: guestroom
+      type: object
+      samples:
+      - 'yes'
+      - 'no'
+      - 'no'
+    - name: basement
+      type: object
+      samples:
+      - 'yes'
+      - 'no'
+      - 'no'
+    - name: hotwaterheating
+      type: object
+      samples:
+      - 'yes'
+      - 'no'
+      - 'yes'
+    - name: airconditioning
+      type: object
+      samples:
+      - 'yes'
+      - 'no'
+      - 'no'
+    - name: parking
+      type: int64
+      samples:
+      - 2
+      - 1
+      - 0
+    - name: prefarea
+      type: object
+      samples:
+      - 'no'
+      - 'yes'
+      - 'no'
+    - name: furnishingstatus
+      type: object
+      samples:
+      - semi-furnished
+      - unfurnished
+      - furnished
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ plot price vs area
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-02-29 23:59:42 [INFO] Executing Step 3: CodeGenerator
+2024-02-29 23:59:45 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-02-29 23:59:45 [INFO] Prompt used:
+            dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 545
+  columns: 13
+  schema:
+    fields:
+    - name: price
+      type: int64
+      samples:
+      - 7525000
+      - 5075000
+      - 3325000
+    - name: area
+      type: int64
+      samples:
+      - 3680
+      - 3162
+      - 5300
+    - name: bedrooms
+      type: int64
+      samples:
+      - 4
+      - 6
+      - 1
+    - name: bathrooms
+      type: int64
+      samples:
+      - 2
+      - 4
+      - 1
+    - name: stories
+      type: int64
+      samples:
+      - 1
+      - 4
+      - 2
+    - name: mainroad
+      type: object
+      samples:
+      - 'yes'
+      - 'yes'
+      - 'no'
+    - name: guestroom
+      type: object
+      samples:
+      - 'yes'
+      - 'no'
+      - 'no'
+    - name: basement
+      type: object
+      samples:
+      - 'yes'
+      - 'no'
+      - 'no'
+    - name: hotwaterheating
+      type: object
+      samples:
+      - 'yes'
+      - 'no'
+      - 'yes'
+    - name: airconditioning
+      type: object
+      samples:
+      - 'yes'
+      - 'no'
+      - 'no'
+    - name: parking
+      type: int64
+      samples:
+      - 2
+      - 1
+      - 0
+    - name: prefarea
+      type: object
+      samples:
+      - 'no'
+      - 'yes'
+      - 'no'
+    - name: furnishingstatus
+      type: object
+      samples:
+      - semi-furnished
+      - unfurnished
+      - furnished
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ plot price vs area
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2024-02-29 23:59:45 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Extracting data from the first dataframe in dfs
+df = dfs[0]
+
+# Plotting price vs area
+plt.figure(figsize=(10, 6))
+plt.scatter(df['area'], df['price'], color='blue')
+plt.title('Price vs Area')
+plt.xlabel('Area')
+plt.ylabel('Price')
+plt.grid(True)
+plt.show()
+
+# Declare result variable as a plot
+result = {"type": "plot", "value": "price_vs_area_plot.png"}
+            ```
+            
+2024-02-29 23:59:45 [INFO] Executing Step 4: CachePopulation
+2024-02-29 23:59:45 [INFO] Executing Step 5: CodeExecution
+2024-02-29 23:59:45 [INFO] Saving charts to exports/charts/e9aee898-6b68-48fa-96e8-d2cbe7a2b276.png
+2024-02-29 23:59:45 [INFO] 
+Code running:
+```
+df = dfs[0]
+plt.figure(figsize=(10, 6))
+plt.scatter(df['area'], df['price'], color='blue')
+plt.title('Price vs Area')
+plt.xlabel('Area')
+plt.ylabel('Price')
+plt.grid(True)
+plt.show()
+result = {'type': 'plot', 'value': 'exports/charts/e9aee898-6b68-48fa-96e8-d2cbe7a2b276.png'}
+        ```
+2024-02-29 23:59:45 [ERROR] Pipeline failed on step 5: [Errno 2] No such file or directory: 'exports/charts/e9aee898-6b68-48fa-96e8-d2cbe7a2b276.png'
+2024-03-01 00:03:58 [INFO] Question: plot price vs area
+2024-03-01 00:03:58 [INFO] Running PandasAI with openai LLM...
+2024-03-01 00:03:58 [INFO] Prompt ID: ad2d53ac-bf02-457b-b5b7-d5fd4b12283e
+2024-03-01 00:03:58 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-03-01 00:03:58 [INFO] Executing Step 0: ValidatePipelineInput
+2024-03-01 00:03:58 [INFO] Executing Step 1: CacheLookup
+2024-03-01 00:03:58 [INFO] Executing Step 2: PromptGeneration
+2024-03-01 00:03:58 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 545
+  columns: 13
+  schema:
+    fields:
+    - name: price
+      type: int64
+      samples:
+      - 7525000
+      - 5075000
+      - 3325000
+    - name: area
+      type: int64
+      samples:
+      - 3680
+      - 3162
+      - 5300
+    - name: bedrooms
+      type: int64
+      samples:
+      - 4
+      - 6
+      - 1
+    - name: bathrooms
+      type: int64
+      samples:
+      - 2
+      - 4
+      - 1
+    - name: stories
+      type: int64
+      samples:
+      - 1
+      - 4
+      - 2
+    - name: mainroad
+      type: object
+      samples:
+      - 'yes'
+      - 'yes'
+      - 'no'
+    - name: guestroom
+      type: object
+      samples:
+      - 'yes'
+      - 'no'
+      - 'no'
+    - name: basement
+      type: object
+      samples:
+      - 'yes'
+      - 'no'
+      - 'no'
+    - name: hotwaterheating
+      type: object
+      samples:
+      - 'yes'
+      - 'no'
+      - 'yes'
+    - name: airconditioning
+      type: object
+      samples:
+      - 'yes'
+      - 'no'
+      - 'no'
+    - name: parking
+      type: int64
+      samples:
+      - 2
+      - 1
+      - 0
+    - name: prefarea
+      type: object
+      samples:
+      - 'no'
+      - 'yes'
+      - 'no'
+    - name: furnishingstatus
+      type: object
+      samples:
+      - semi-furnished
+      - unfurnished
+      - furnished
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ plot price vs area
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-03-01 00:03:58 [INFO] Executing Step 3: CodeGenerator
+2024-03-01 00:04:01 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-03-01 00:04:01 [INFO] Prompt used:
+            dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 545
+  columns: 13
+  schema:
+    fields:
+    - name: price
+      type: int64
+      samples:
+      - 7525000
+      - 5075000
+      - 3325000
+    - name: area
+      type: int64
+      samples:
+      - 3680
+      - 3162
+      - 5300
+    - name: bedrooms
+      type: int64
+      samples:
+      - 4
+      - 6
+      - 1
+    - name: bathrooms
+      type: int64
+      samples:
+      - 2
+      - 4
+      - 1
+    - name: stories
+      type: int64
+      samples:
+      - 1
+      - 4
+      - 2
+    - name: mainroad
+      type: object
+      samples:
+      - 'yes'
+      - 'yes'
+      - 'no'
+    - name: guestroom
+      type: object
+      samples:
+      - 'yes'
+      - 'no'
+      - 'no'
+    - name: basement
+      type: object
+      samples:
+      - 'yes'
+      - 'no'
+      - 'no'
+    - name: hotwaterheating
+      type: object
+      samples:
+      - 'yes'
+      - 'no'
+      - 'yes'
+    - name: airconditioning
+      type: object
+      samples:
+      - 'yes'
+      - 'no'
+      - 'no'
+    - name: parking
+      type: int64
+      samples:
+      - 2
+      - 1
+      - 0
+    - name: prefarea
+      type: object
+      samples:
+      - 'no'
+      - 'yes'
+      - 'no'
+    - name: furnishingstatus
+      type: object
+      samples:
+      - semi-furnished
+      - unfurnished
+      - furnished
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ plot price vs area
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2024-03-01 00:04:01 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Plotting price vs area
+plt.figure(figsize=(10, 6))
+plt.scatter(dfs[0]['area'], dfs[0]['price'], color='blue')
+plt.title('Price vs Area')
+plt.xlabel('Area')
+plt.ylabel('Price')
+plt.grid(True)
+plt.show()
+
+result = {"type": "plot", "value": "Price_vs_Area.png"}
+            ```
+            
+2024-03-01 00:04:01 [INFO] Executing Step 4: CachePopulation
+2024-03-01 00:04:01 [INFO] Executing Step 5: CodeExecution
+2024-03-01 00:04:01 [INFO] Saving charts to exports/charts/ad2d53ac-bf02-457b-b5b7-d5fd4b12283e.png
+2024-03-01 00:04:01 [INFO] 
+Code running:
+```
+plt.figure(figsize=(10, 6))
+plt.scatter(dfs[0]['area'], dfs[0]['price'], color='blue')
+plt.title('Price vs Area')
+plt.xlabel('Area')
+plt.ylabel('Price')
+plt.grid(True)
+plt.show()
+result = {'type': 'plot', 'value': 'exports/charts/ad2d53ac-bf02-457b-b5b7-d5fd4b12283e.png'}
+        ```
+2024-03-01 00:04:01 [ERROR] Pipeline failed on step 5: [Errno 2] No such file or directory: 'exports/charts/ad2d53ac-bf02-457b-b5b7-d5fd4b12283e.png'
+2024-03-01 00:05:01 [INFO] Question: plot price vs area
+2024-03-01 00:05:01 [INFO] Running PandasAI with openai LLM...
+2024-03-01 00:05:01 [INFO] Prompt ID: 878153c6-b5d9-4ee2-a9ed-3b07a5ae2864
+2024-03-01 00:05:01 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-03-01 00:05:01 [INFO] Executing Step 0: ValidatePipelineInput
+2024-03-01 00:05:01 [INFO] Executing Step 1: CacheLookup
+2024-03-01 00:05:01 [INFO] Using cached response
+2024-03-01 00:05:01 [INFO] Executing Step 2: PromptGeneration
+2024-03-01 00:05:01 [INFO] Executing Step 2: Skipping...
+2024-03-01 00:05:01 [INFO] Executing Step 3: CodeGenerator
+2024-03-01 00:05:01 [INFO] Executing Step 3: Skipping...
+2024-03-01 00:05:01 [INFO] Executing Step 4: CachePopulation
+2024-03-01 00:05:01 [INFO] Executing Step 4: Skipping...
+2024-03-01 00:05:01 [INFO] Executing Step 5: CodeExecution
+2024-03-01 00:05:01 [INFO] Saving charts to exports/charts/878153c6-b5d9-4ee2-a9ed-3b07a5ae2864.png
+2024-03-01 00:05:01 [INFO] 
+Code running:
+```
+df = dfs[0]
+plt.figure(figsize=(10, 6))
+plt.scatter(df['area'], df['price'], color='blue')
+plt.title('Price vs Area')
+plt.xlabel('Area')
+plt.ylabel('Price')
+plt.grid(True)
+plt.show()
+result = {'type': 'plot', 'value': 'exports/charts/878153c6-b5d9-4ee2-a9ed-3b07a5ae2864.png'}
+        ```
+2024-03-01 00:05:01 [ERROR] Pipeline failed on step 5: [Errno 2] No such file or directory: 'exports/charts/878153c6-b5d9-4ee2-a9ed-3b07a5ae2864.png'
+2024-03-01 00:08:00 [INFO] Question: Plot salaries against employee name
+2024-03-01 00:08:00 [INFO] Question: Plot salaries against employee name
+2024-03-01 00:08:00 [INFO] Running PandasAI with openai LLM...
+2024-03-01 00:08:00 [INFO] Running PandasAI with openai LLM...
+2024-03-01 00:08:00 [INFO] Prompt ID: 03c2a9b4-7dcf-4b65-8a55-0b03aa7ca881
+2024-03-01 00:08:00 [INFO] Prompt ID: c5a2553b-f3db-43e7-b646-d2de6f4abc9f
+2024-03-01 00:08:00 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-03-01 00:08:00 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-03-01 00:08:00 [INFO] Executing Step 0: ValidatePipelineInput
+2024-03-01 00:08:00 [INFO] Executing Step 0: ValidatePipelineInput
+2024-03-01 00:08:00 [INFO] Executing Step 1: CacheLookup
+2024-03-01 00:08:00 [INFO] Executing Step 1: CacheLookup
+2024-03-01 00:08:00 [INFO] Executing Step 2: PromptGeneration
+2024-03-01 00:08:00 [INFO] Executing Step 2: PromptGeneration
+2024-03-01 00:08:00 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 5
+  columns: 3
+  schema:
+    fields:
+    - name: EmployeeID
+      type: int64
+      samples:
+      - 2
+      - 3
+      - 1
+    - name: Name
+      type: object
+      samples:
+      - Emma
+      - William
+      - John
+    - name: Department
+      type: object
+      samples:
+      - HR
+      - Marketing
+      - Finance
+dfs[1]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 5
+  columns: 2
+  schema:
+    fields:
+    - name: EmployeeID
+      type: int64
+      samples:
+      - 4
+      - 3
+      - 2
+    - name: Salary
+      type: int64
+      samples:
+      - 6000
+      - 5000
+      - 4500
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Plot salaries against employee name
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-03-01 00:08:00 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 5
+  columns: 3
+  schema:
+    fields:
+    - name: EmployeeID
+      type: int64
+      samples:
+      - 1
+      - 5
+      - 4
+    - name: Name
+      type: object
+      samples:
+      - Emma
+      - Olivia
+      - Liam
+    - name: Department
+      type: object
+      samples:
+      - HR
+      - Sales
+      - IT
+dfs[1]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 5
+  columns: 2
+  schema:
+    fields:
+    - name: EmployeeID
+      type: int64
+      samples:
+      - 3
+      - 4
+      - 5
+    - name: Salary
+      type: int64
+      samples:
+      - 6000
+      - 4500
+      - 5500
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Plot salaries against employee name
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-03-01 00:08:00 [INFO] Executing Step 3: CodeGenerator
+2024-03-01 00:08:00 [INFO] Executing Step 3: CodeGenerator
+2024-03-01 00:08:01 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-03-01 00:08:01 [ERROR] Pipeline failed on step 3: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-2X2e3***************************************mkxf. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2024-03-01 00:08:01 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-03-01 00:08:01 [ERROR] Pipeline failed on step 3: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-2X2e3***************************************mkxf. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
