@@ -5,12 +5,13 @@ from pandasai.llm import OpenAI
 import matplotlib.pyplot as plt
 import os
 
+#user_defined_path = '/Users/sercan/Desktop/pandas-ai-streamlit/exports/charts/'
+
 def save_api_key(api_key):
     # Set the environment variable
     os.environ["OPENAI_API_KEY"] = api_key
     
 st.title("pandas-ai streamlit interface")
-
 st.write("A demo interface for [PandasAI](https://github.com/Sinaptik-AI/pandas-ai)")
 st.write(
     "Looking for an example *.csv-file?, check [here](https://gist.github.com/netj/8836201) (Download ZIP)."
@@ -37,7 +38,11 @@ if "openai_key" in st.session_state:
         if uploaded_file is not None:
             df = pd.read_csv(uploaded_file)
             st.session_state.df = df
-            st.session_state.df2 = SmartDataframe(st.session_state.df,config={"llm": llm})  # Use SmartDataframe to wrap the DataFrame
+            st.session_state.df2 = SmartDataframe(st.session_state.df,
+                                                  config={
+                                                      "save_charts": True,
+                                                      "llm": llm
+                                                        })  # Use SmartDataframe to wrap the DataFrame
 
     with st.form("Question"):
         question = st.text_input("Question", value="", type="default")
@@ -48,10 +53,10 @@ if "openai_key" in st.session_state:
                 if response is not None:
                     st.write(response)
                     
-                    if os.path.isfile('temp_chart.png'):
-                        im = plt.imread('temp_chart.png')
+                    if os.path.isfile('chart.png'):
+                        im = plt.imread('chart.png')
                         st.image(im)
-                        os.remove('temp_chart.png')
+                        os.remove('chart.png')
                     
                 st.session_state.prompt_history.append(question)
 
