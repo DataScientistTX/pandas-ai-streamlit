@@ -25,6 +25,9 @@ Note: This is the stable version with pandas-ai version 2.0.
 - Charts are stored as `temp_chart.png` and now they are loaded from there. 
 - The implementation is not perfect an might cause issues when having multiple concurrent users.
 
-## References
+## Known issues
+- Generated images are not shown
 
+## References
 - [PandasAI](https://github.com/Sinaptik-AI/pandas-ai)
+- [PandasAI Streamlit](https://github.com/straussmaximilian/pandas-ai-streamlit)
