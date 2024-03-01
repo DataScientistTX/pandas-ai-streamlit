@@ -24,3 +24,7 @@ Note: This is the stable version with pandas-ai version 2.0.
 - Updated to python==3.11
 - Charts are stored as `temp_chart.png` and now they are loaded from there. 
 - The implementation is not perfect an might cause issues when having multiple concurrent users.
+
+## References
+
+- [PandasAI](https://github.com/Sinaptik-AI/pandas-ai)
