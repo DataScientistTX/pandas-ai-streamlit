@@ -2,10 +2,11 @@ import streamlit as st
 import pandas as pd
 from pandasai import SmartDataframe
 from pandasai.llm import OpenAI
+from pandasai.responses.streamlit_response import StreamlitResponse
+
 import matplotlib.pyplot as plt
 import os
 
-#user_defined_path = '/Users/sercan/Desktop/pandas-ai-streamlit/exports/charts/'
 
 def save_api_key(api_key):
     # Set the environment variable
@@ -38,11 +39,13 @@ if "openai_key" in st.session_state:
         if uploaded_file is not None:
             df = pd.read_csv(uploaded_file)
             st.session_state.df = df
+             
             st.session_state.df2 = SmartDataframe(st.session_state.df,
                                                   config={
                                                       "save_charts": True,
-                                                      "llm": llm
-                                                        })  # Use SmartDataframe to wrap the DataFrame
+                                                      "save_charts_path": "charts/",
+                                                      "open_charts": False,
+                                                      "llm": llm})
 
     with st.form("Question"):
         question = st.text_input("Question", value="", type="default")
@@ -53,10 +56,10 @@ if "openai_key" in st.session_state:
                 if response is not None:
                     st.write(response)
                     
-                    if os.path.isfile('chart.png'):
-                        im = plt.imread('chart.png')
-                        st.image(im)
-                        os.remove('chart.png')
+                    # if os.path.isfile('chart.png'):
+                    #     im = plt.imread('chart.png')
+                    #     st.image(im)
+                    #     os.remove('chart.png')
                     
                 st.session_state.prompt_history.append(question)
 
