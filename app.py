@@ -5,7 +5,7 @@ from pandasai.llm import OpenAI
 import matplotlib.pyplot as plt
 import os
 
-llm = OpenAI(api_token="YOUR_API_TOKEN")
+llm = OpenAI(api_key="YOUR_API_KEY")  # Update 'api_key' parameter name
 
 st.title("pandas-ai streamlit interface")
 
@@ -31,36 +31,25 @@ if "openai_key" in st.session_state:
         )
         if uploaded_file is not None:
             df = pd.read_csv(uploaded_file)
-            st.session_state.df = df
-
-df = SmartDataframe(sales_by_country, config={"llm": llm})
-df.chat('Which are the top 5 countries by sales?')
+            st.session_state.df = SmartDataframe(df,config={"llm": llm})  # Use SmartDataframe to wrap the DataFrame
 
     with st.form("Question"):
         question = st.text_input("Question", value="", type="default")
         submitted = st.form_submit_button("Submit")
         if submitted:
             with st.spinner():
-                llm = OpenAI(api_token=st.session_state.openai_key)
-                pandas_ai = PandasAI(llm)
-                x = pandas_ai.run(st.session_state.df, prompt=question)
-
-                if os.path.isfile('temp_chart.png'):
-                    im = plt.imread('temp_chart.png')
-                    st.image(im)
-                    os.remove('temp_chart.png')
-
-                if x is not None:
-                    st.write(x)
+                llm = OpenAI(api_key=st.session_state.openai_key)  # Update 'api_key' parameter name
+                response = st.session_state.df.ask(question)  # Use .ask() method for SmartDataframe
+                if response is not None:
+                    st.write(response)
                 st.session_state.prompt_history.append(question)
 
     if st.session_state.df is not None:
         st.subheader("Current dataframe:")
-        st.write(st.session_state.df)
+        st.write(st.session_state.df.dataframe)  # Access the original DataFrame using .dataframe attribute
 
     st.subheader("Prompt history:")
     st.write(st.session_state.prompt_history)
-
 
 if st.button("Clear"):
     st.session_state.prompt_history = []
