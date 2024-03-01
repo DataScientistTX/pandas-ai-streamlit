@@ -47,6 +47,12 @@ if "openai_key" in st.session_state:
                 response = st.session_state.df2.chat(str(question))  # Use .chat() method for SmartDataframe
                 if response is not None:
                     st.write(response)
+                    
+                    if os.path.isfile('temp_chart.png'):
+                        im = plt.imread('temp_chart.png')
+                        st.image(im)
+                        os.remove('temp_chart.png')
+                    
                 st.session_state.prompt_history.append(question)
 
     if st.session_state.df is not None:
