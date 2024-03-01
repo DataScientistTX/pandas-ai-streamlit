@@ -1,13 +1,15 @@
 import streamlit as st
 import pandas as pd
-from pandasai import PandasAI
-from pandasai.llm.openai import OpenAI
+from pandasai import SmartDataframe
+from pandasai.llm import OpenAI
 import matplotlib.pyplot as plt
 import os
 
+llm = OpenAI(api_token="YOUR_API_TOKEN")
+
 st.title("pandas-ai streamlit interface")
 
-st.write("A demo interface for [PandasAI](https://github.com/gventuri/pandas-ai)")
+st.write("A demo interface for [PandasAI](https://github.com/Sinaptik-AI/pandas-ai)")
 st.write(
     "Looking for an example *.csv-file?, check [here](https://gist.github.com/netj/8836201) (Download ZIP)."
 )
@@ -30,6 +32,9 @@ if "openai_key" in st.session_state:
         if uploaded_file is not None:
             df = pd.read_csv(uploaded_file)
             st.session_state.df = df
+
+df = SmartDataframe(sales_by_country, config={"llm": llm})
+df.chat('Which are the top 5 countries by sales?')
 
     with st.form("Question"):
         question = st.text_input("Question", value="", type="default")
