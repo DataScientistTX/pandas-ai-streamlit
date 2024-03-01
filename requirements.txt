@@ -34,6 +34,7 @@ pandas==1.5.3
 pandasai==2.0
 parso==0.8.3
 pexpect==4.9.0
+polars==0.20.13
 pillow==10.2.0
 prompt-toolkit==3.0.43
 ptyprocess==0.7.0

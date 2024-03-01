@@ -5,8 +5,6 @@ from pandasai.llm import OpenAI
 import matplotlib.pyplot as plt
 import os
 
-llm = OpenAI(api_key="YOUR_API_KEY")  # Update 'api_key' parameter name
-
 st.title("pandas-ai streamlit interface")
 
 st.write("A demo interface for [PandasAI](https://github.com/Sinaptik-AI/pandas-ai)")
@@ -24,6 +22,8 @@ if "openai_key" not in st.session_state:
             st.success('Saved API key for this session.')
 
 if "openai_key" in st.session_state:
+    llm = OpenAI(api_key="YOUR_API_KEY")  # Update 'api_key' parameter name
+
     if st.session_state.df is None:
         uploaded_file = st.file_uploader(
             "Choose a CSV file. This should be in long format (one datapoint per row).",
@@ -31,14 +31,14 @@ if "openai_key" in st.session_state:
         )
         if uploaded_file is not None:
             df = pd.read_csv(uploaded_file)
-            st.session_state.df = SmartDataframe(df,config={"llm": llm})  # Use SmartDataframe to wrap the DataFrame
+            st.session_state.df = df
+            st.session_state.df = SmartDataframe(st.session_state.df,config={"llm": llm})  # Use SmartDataframe to wrap the DataFrame
 
     with st.form("Question"):
         question = st.text_input("Question", value="", type="default")
         submitted = st.form_submit_button("Submit")
         if submitted:
             with st.spinner():
-                llm = OpenAI(api_key=st.session_state.openai_key)  # Update 'api_key' parameter name
                 response = st.session_state.df.ask(question)  # Use .ask() method for SmartDataframe
                 if response is not None:
                     st.write(response)
