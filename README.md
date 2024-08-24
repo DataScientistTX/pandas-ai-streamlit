@@ -24,31 +24,31 @@ An intuitive Streamlit interface for PandasAI, enabling AI-powered data analysis
 
 1. Clone the repository:
 
-'''
+```
 git clone https://github.com/DataScientistTX/pandas-ai-streamlit.git
 cd pandas-ai-streamlit
-'''
+```
 
 2. Create and activate a Conda environment:
 
-'''
+```
 conda create --name pandasai python=3.11
 conda activate pandasai
-'''
+```
 
 3. Install the required packages:
 
-'''
+```
 pip install -r requirements.txt
-'''
+```
 
 ### Running the Application
 
 Launch the Streamlit app:
 
-'''
+```
 streamlit run run.py
-'''
+```
 
 The application will open in your default web browser.
 
