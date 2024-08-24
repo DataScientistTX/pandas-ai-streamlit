@@ -68,11 +68,6 @@ Note: This is the stable version with PandasAI version 2.0.
 - Updated to PandasAI version 2.0
 - Requires Python 3.11
 - Charts are stored as `temp_chart.png` and now they are loaded from there
-- The implementation is not perfect and might cause issues when having multiple concurrent users
-
-## ⚠️ Known Issues
-
-- Generated images are not shown
 
 ## 🤝 Contributing
 
@@ -94,4 +89,4 @@ For any queries or suggestions, please open an issue on this repository.
 
 ---
 
-Made with ❤️ by [DataScientistTX]
+Made with ❤️ by DataScientistTX
