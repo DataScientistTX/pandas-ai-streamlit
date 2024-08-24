@@ -42,6 +42,14 @@ conda activate pandasai
 pip install -r requirements.txt
 ```
 
+4. Set up environment variables:
+- Create a `.env` file in the project root directory
+- Add your OpenAI API key to the `.env` file:
+  ```
+  OPENAI_API_KEY=your_api_key_here
+  ```
+Replace `your_api_key_here` with your actual OpenAI API key.
+
 ### Running the Application
 
 Launch the Streamlit app:
